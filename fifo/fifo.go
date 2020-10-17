@@ -63,7 +63,7 @@ func (f *fifo) Get(key string) interface{} {
 
 func (f *fifo) Del(key string) interface{} {
 	if e, ok := f.cache[key]; ok {
-		return e.Value.(*entry).value
+		f.removeElement(e)
 	}
 	return nil
 }

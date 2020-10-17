@@ -35,7 +35,7 @@ func TestOnEvicted(t *testing.T) {
 	cache.Set("k3", 3)
 	cache.Get("k1")
 	cache.Set("k4", 4)
-	expected := []string{"k1, k2"}
+	expected := []string{"k1", "k2"}
 
 	i.Equal(expected, keys)
 	i.Equal(2, cache.Len())
